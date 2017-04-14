@@ -1,7 +1,6 @@
 package org.krayne.datasource.inmemory;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
@@ -42,13 +41,10 @@ public class InMemoryPhotoAlbumDataSource implements PhotoAlbumDataSource {
     }
 
     @Override
-    public CompletableFuture<ImmutableMap<Album, AlbumContent>> getAll() {
+    public CompletableFuture<ImmutableList<Album>> getAlbums() {
         this.lock.readLock().lock();
         try {
-            ImmutableMap.Builder<Album, AlbumContent> albums = ImmutableMap.builder();
-            this.albums.values().stream()
-                    .forEach(album -> this.getContent(album.getId()).ifPresent(albumContent -> albums.put(album, albumContent)));
-            return CompletableFuture.completedFuture(albums.build());
+            return CompletableFuture.completedFuture(ImmutableList.copyOf(this.albums.values()));
         } finally {
             this.lock.readLock().unlock();
         }

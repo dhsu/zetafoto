@@ -8,13 +8,10 @@ import org.krayne.util.Futures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
-import javax.ws.rs.core.MediaType;
 
 @Path("/zetafoto/v1/admin")
 public class AdminResource {
@@ -43,19 +40,5 @@ public class AdminResource {
                 asyncResponse.resume(Responses.internalServerError());
             }
         ));
-    }
-
-    @GET
-    @Timed
-    @Path("/all")
-    @Produces(MediaType.APPLICATION_JSON)
-    public void getAll(@Suspended AsyncResponse asyncResponse) {
-//        this.photoAlbumDataSource.getAll().whenComplete(Futures.handle(
-//                all -> asyncResponse.resume(Responses.of(albumContent)),
-//                throwable -> {
-//                    LOGGER.error("Album resource failed to get album content for album, " + albumId, throwable);
-//                    asyncResponse.resume(Responses.internalServerError());
-//                }
-//        ));
     }
 }

@@ -1,6 +1,6 @@
 package org.krayne.datasource;
 
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableList;
 import org.krayne.model.Album;
 import org.krayne.model.AlbumContent;
 import org.krayne.model.Photo;
@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 
 public interface PhotoAlbumDataSource {
     CompletableFuture<Optional<AlbumContent>> getAlbumContent(Long albumId);
-    CompletableFuture<ImmutableMap<Album, AlbumContent>> getAll();
+    CompletableFuture<ImmutableList<Album>> getAlbums();
     CompletableFuture<Optional<Album>> getAlbum(Long albumId);
     CompletableFuture<OpResult> createAlbum(Album album);
     CompletableFuture<OpResult> updateAlbum(Album album);

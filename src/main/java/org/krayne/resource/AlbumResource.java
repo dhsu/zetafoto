@@ -60,6 +60,19 @@ public class AlbumResource {
         ));
     }
 
+    @GET
+    @Timed
+    @Produces(MediaType.APPLICATION_JSON)
+    public void getAlbums(@Suspended AsyncResponse asyncResponse) {
+        this.photoAlbumDataSource.getAlbums().whenComplete(Futures.handle(
+                albums -> asyncResponse.resume(Responses.ok(albums)),
+                throwable -> {
+                    LOGGER.error("Album resource failed to get albums", throwable);
+                    asyncResponse.resume(Responses.internalServerError());
+                }
+        ));
+    }
+
     @POST
     @Timed
     @Consumes(MediaType.APPLICATION_JSON)

@@ -57,12 +57,12 @@ public final class Responses {
         return Response.ok().build();
     }
 
-    public static Response noContent() {
-        return Response.noContent().build();
+    public static <T> Response ok(T o) {
+        return Response.ok(o).build();
     }
 
-    public static Response resetContent() {
-        return Response.status(Response.Status.RESET_CONTENT).build();
+    public static Response noContent() {
+        return Response.noContent().build();
     }
 
     public static Response of(Optional<?> o) {
