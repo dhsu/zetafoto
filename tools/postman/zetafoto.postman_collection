@@ -3,7 +3,7 @@
 	"info": {
 		"name": "zetafoto",
 		"_postman_id": "0e76ab66-fa4f-0b67-55a9-034c339356da",
-		"description": "## ZetaForo API\n\n### Required env variables\n\n- **zetafoto-url** - zetafoto endpoint (e.g. http://localhost:8000)",
+		"description": "## ZetaFoto API\n\n### Required env variables\n\n- **zetafoto-url** - zetafoto endpoint (e.g. http://localhost:8000)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [

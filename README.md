@@ -24,7 +24,8 @@ From the root:
 API
 ---
 
-A Postman Collection is available in the repo [here](tools/postman/zetafoto.postman_collection)
+A Postman Collection is available in the repo at [tools/postman/zetafoto.postman_collection](tools/postman/zetafoto.postman_collection). If you use it, don't forget to add the Postman
+environment variable, `zetafoto-url`, with value, `http://localhost:8000`.
 
 ### Initialize
 This should not be exposed, but as a toy problem, it provides a way to get sample
