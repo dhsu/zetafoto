@@ -6,6 +6,12 @@ Overview
 Sample REST API using [Dropwizard](http://www.dropwizard.io/) that can be used for
 learning and reference.
 
+Prerequisites
+-------------
+
+* Java 8+
+* Maven
+
 Build and Run Locally
 ---------------------
 
