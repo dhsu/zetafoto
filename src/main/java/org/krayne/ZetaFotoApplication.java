@@ -1,5 +1,6 @@
 package org.krayne;
 
+import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.client.HttpClientBuilder;
 import io.dropwizard.client.HttpClientConfiguration;
@@ -38,7 +39,13 @@ public class ZetaFotoApplication extends Application<ZetaFotoConfiguration> {
         environment.jersey().register(JsonProcessingExceptionMapper.class);
 
         // register health checks
-        //environment.healthChecks().register("dynamodb", new DynamoDbHealthCheck(dynamoEndpoint));
+        // TODO: check an actual subsystem
+        environment.healthChecks().register("webServer", new HealthCheck() {
+            @Override
+            protected Result check() throws Exception {
+                return Result.healthy();
+            }
+        });
 
         // initializer
         HttpClientConfiguration httpClientConfiguration = config.getHttpClientConfiguration();
