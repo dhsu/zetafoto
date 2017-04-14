@@ -1,0 +1,27 @@
+version: 0.0.1
+initialAlbumsUrl: https://jsonplaceholder.typicode.com/albums
+initialPhotosUrl: https://jsonplaceholder.typicode.com/photos
+
+#-----------------------------------------------------------------------------
+# dropwizard config
+
+logging:
+  level: INFO
+  loggers:
+    org.krayne: DEBUG
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8000
+  adminConnectors:
+    - type: http
+      port: 8001
+
+httpClient:
+  timeout: 1000ms
+  connectionTimeout: 1000ms
