@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "zetafoto",
+		"_postman_id": "0e76ab66-fa4f-0b67-55a9-034c339356da",
+		"description": "## ZetaForo API\n\n### Required env variables\n\n- **zetafoto-url** - zetafoto endpoint (e.g. http://localhost:8000)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "albums",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "album",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums/33",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "/zetafoto/v1/albums/:albumId"
+			},
+			"response": []
+		},
+		{
+			"name": "album content",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums/33/content",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "/zetafoto/v1/albums/:albumId/content"
+			},
+			"response": []
+		},
+		{
+			"name": "album",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 108,\n  \"userId\": 3,\n  \"title\": \"Mount Olympus\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "album",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 108,\n  \"userId\": 3,\n  \"title\": \"Mount Olympus\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "album",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/albums/108",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "/zetafoto/v1/albums/:albumId"
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/photos/7687686",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "/zetafoto/v1/albums/:albumId"
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/photos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 7687686,\n  \"albumId\": 108,\n  \"title\": \"Persephone and Hades\",\n  \"url\": \"http://placehold.it/600/acff72\",\n  \"thumbnailUrl\": \"http://placehold.it/150/acff72\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/photos",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 7687686,\n  \"albumId\": 108,\n  \"title\": \"Persephone and Hades\",\n  \"url\": \"http://placehold.it/600/acff72\",\n  \"thumbnailUrl\": \"http://placehold.it/150/acff72\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/photos/7687686",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "/zetafoto/v1/photos/:photoId"
+			},
+			"response": []
+		},
+		{
+			"name": "init",
+			"request": {
+				"url": "{{zetafoto-url}}/zetafoto/v1/admin/init",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
